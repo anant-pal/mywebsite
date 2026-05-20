@@ -3,54 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paliwal And Associates</title>
+
+  <title>Paliwal And Associates | Architects & Interiors</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:Arial, sans-serif;
       scroll-behavior:smooth;
     }
 
     body{
-      background:#f8fafc;
-      color:#111827;
+      font-family:'Poppins',sans-serif;
+      background:#0f0f0f;
+      color:white;
+      overflow-x:hidden;
     }
 
     nav{
       width:100%;
-      padding:20px 8%;
-      background:#111827;
+      position:fixed;
+      top:0;
+      left:0;
+      padding:22px 8%;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      position:fixed;
-      top:0;
+      background:rgba(0,0,0,0.5);
+      backdrop-filter:blur(10px);
       z-index:1000;
     }
 
     nav h2{
-      color:white;
+      color:#d4af37;
+      font-size:28px;
+      letter-spacing:1px;
     }
 
     nav ul{
       display:flex;
-      gap:25px;
       list-style:none;
+      gap:35px;
     }
 
     nav ul li a{
       color:white;
       text-decoration:none;
       font-size:15px;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#d4af37;
     }
 
     header{
+      width:100%;
       height:100vh;
-      background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-      url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1400&auto=format&fit=crop');
+      background:
+      linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.65)),
+      url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop');
       background-size:cover;
       background-position:center;
       display:flex;
@@ -58,207 +75,305 @@
       align-items:center;
       text-align:center;
       padding:20px;
-      color:white;
     }
 
     .hero{
-      max-width:800px;
+      max-width:900px;
     }
 
     .hero h1{
-      font-size:60px;
-      margin-bottom:20px;
+      font-size:75px;
+      line-height:1.1;
+      margin-bottom:25px;
+    }
+
+    .hero h1 span{
+      color:#d4af37;
     }
 
     .hero p{
+      color:#d1d5db;
       font-size:20px;
-      line-height:1.7;
-      color:#e5e7eb;
+      line-height:1.8;
     }
 
     .btn{
       display:inline-block;
-      margin-top:30px;
-      padding:15px 35px;
-      background:#2563eb;
-      color:white;
+      margin-top:35px;
+      padding:15px 38px;
+      background:#d4af37;
+      color:black;
       text-decoration:none;
-      border-radius:8px;
-      transition:0.3s;
-      font-weight:bold;
+      border-radius:50px;
+      font-weight:600;
+      transition:0.4s;
     }
 
     .btn:hover{
-      background:#1d4ed8;
-      transform:scale(1.05);
+      transform:translateY(-4px);
+      background:white;
     }
 
     section{
-      padding:90px 10%;
+      padding:100px 10%;
     }
 
-    .title{
+    .section-title{
       text-align:center;
-      font-size:40px;
-      margin-bottom:50px;
-      color:#111827;
-    }
-
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-    }
-
-    .card{
-      background:white;
-      padding:30px;
-      border-radius:15px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.08);
-      transition:0.3s;
-    }
-
-    .card:hover{
-      transform:translateY(-8px);
-    }
-
-    .card h3{
-      margin-bottom:15px;
-      color:#2563eb;
+      font-size:50px;
+      margin-bottom:60px;
+      color:#d4af37;
     }
 
     .about{
       text-align:center;
-      max-width:900px;
+      max-width:950px;
       margin:auto;
-      line-height:1.8;
+      color:#d1d5db;
       font-size:18px;
-      color:#374151;
+      line-height:2;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#171717;
+      padding:40px 30px;
+      border-radius:20px;
+      transition:0.4s;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-color:#d4af37;
+    }
+
+    .card h3{
+      color:#d4af37;
+      margin-bottom:18px;
+      font-size:24px;
+    }
+
+    .card p{
+      color:#d1d5db;
+      line-height:1.8;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      border-radius:18px;
+      transition:0.4s;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
     }
 
     .contact-box{
-      max-width:700px;
+      max-width:850px;
       margin:auto;
-      background:white;
-      padding:40px;
-      border-radius:15px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+      background:#171717;
+      padding:50px;
+      border-radius:25px;
       text-align:center;
     }
 
     .contact-box p{
-      margin:15px 0;
+      margin:18px 0;
+      color:#d1d5db;
       font-size:18px;
     }
 
     footer{
-      background:#111827;
-      color:white;
+      background:black;
       text-align:center;
-      padding:25px;
+      padding:30px;
+      color:#9ca3af;
     }
 
     @media(max-width:768px){
 
-      .hero h1{
-        font-size:40px;
-      }
-
       nav{
         flex-direction:column;
-        gap:15px;
+        gap:20px;
       }
 
       nav ul{
-        gap:15px;
+        gap:18px;
       }
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .section-title{
+        font-size:36px;
+      }
+
+      .hero p{
+        font-size:17px;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
   <nav>
-    <h2>Paliwal And Associates</h2>
+
+    <h2>Paliwal & Associates</h2>
 
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
   </nav>
 
   <header>
+
     <div class="hero">
-      <h1>Paliwal And Associates</h1>
+
+      <h1>
+        Designing <span>Luxury Spaces</span><br>
+        That Inspire
+      </h1>
 
       <p>
-        Professional business consultancy and trusted services with commitment, transparency and client satisfaction.
+        Premium architecture and interior design solutions crafted with creativity,
+        elegance and functionality for modern living and commercial spaces.
       </p>
 
-      <a href="#contact" class="btn">Contact Us</a>
+      <a href="#contact" class="btn">Book Consultation</a>
+
     </div>
+
   </header>
 
   <section id="about">
-    <h2 class="title">About Us</h2>
+
+    <h2 class="section-title">About Us</h2>
 
     <div class="about">
+
       <p>
-        Paliwal And Associates is dedicated to providing reliable and professional services with a strong focus on quality, trust and customer satisfaction. We believe in building long-term relationships with our clients through transparency, commitment and excellence.
+        Paliwal & Associates specializes in modern architecture, luxury interiors,
+        residential planning and commercial design solutions. Our vision is to create
+        timeless spaces that combine aesthetics, comfort and innovation while delivering
+        exceptional experiences for every client.
       </p>
+
     </div>
+
   </section>
 
   <section id="services">
-    <h2 class="title">Our Services</h2>
 
-    <div class="cards">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="services">
 
       <div class="card">
-        <h3>Business Consulting</h3>
+        <h3>Architecture Design</h3>
+
         <p>
-          Expert consultation and professional guidance for businesses and individuals.
+          Smart, elegant and modern architectural planning for residential
+          and commercial projects.
         </p>
       </div>
 
       <div class="card">
-        <h3>Client Support</h3>
+        <h3>Interior Design</h3>
+
         <p>
-          Dedicated assistance and reliable customer support tailored to your needs.
+          Luxury interiors designed with premium aesthetics,
+          functionality and attention to detail.
         </p>
       </div>
 
       <div class="card">
-        <h3>Professional Solutions</h3>
+        <h3>3D Visualization</h3>
+
         <p>
-          Providing efficient and modern solutions with complete professionalism.
+          Realistic 3D concepts and visual presentations
+          before project execution.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Turnkey Projects</h3>
+
+        <p>
+          Complete end-to-end project management and execution
+          with quality assurance.
         </p>
       </div>
 
     </div>
+
+  </section>
+
+  <section id="projects">
+
+    <h2 class="section-title">Featured Designs</h2>
+
+    <div class="gallery">
+
+      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop">
+
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop">
+
+      <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb3?q=80&w=1200&auto=format&fit=crop">
+
+    </div>
+
   </section>
 
   <section id="contact">
-    <h2 class="title">Contact Us</h2>
+
+    <h2 class="section-title">Contact Us</h2>
 
     <div class="contact-box">
-      <p><strong>Business:</strong> Paliwal And Associates</p>
 
-      <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
+      <p><strong>Paliwal & Associates</strong></p>
 
-      <p><strong>Email:</strong> yourmail@gmail.com</p>
+      <p>Architects • Interiors • Design Studio</p>
 
-      <p><strong>Location:</strong> India</p>
+      <p>📞 +91 XXXXX XXXXX</p>
 
-      <a class="btn" href="https://www.google.com/search?q=Paliwal+And+Associates" target="_blank">
-        View on Google
+      <p>📧 yourmail@gmail.com</p>
+
+      <p>📍 India</p>
+
+      <a class="btn" href="https://wa.me/91XXXXXXXXXX">
+        WhatsApp Us
       </a>
+
     </div>
+
   </section>
 
   <footer>
-    © 2026 Paliwal And Associates. All Rights Reserved.
+
+    © 2026 Paliwal & Associates — Architects & Interiors
+
   </footer>
 
 </body>
